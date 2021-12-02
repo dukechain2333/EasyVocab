@@ -18,9 +18,17 @@ from django.urls import include, path
 from django.views import static
 from django.conf import settings
 from django.conf.urls import url
+import Home.views as home_views
+import Authentication.views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^static/(?P<path>.*)$', static.serve,
         {'document_root': settings.STATIC_ROOT}, name='static'),
+    # Home
+    path('', home_views.home),
+    # Authentication
+    path('login', auth_views.login),
+    path('signup', auth_views.signup),
+
 ]

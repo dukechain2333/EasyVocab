@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    {% include 'General/Packages.html' %} {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/Home.css' %}">
+</head>
+<body>
+<div class="container-fluent">
+    <div class="row">{% include 'General/Navigator.html' %}</div>
+    <div class="homepage">
+        <span>
+            Welcome to EasyVocab
+            <br>
+            The best tool to learn vocabulary!
+        </span>
+    </div>
+    <div class="row">{% include 'General/Copyright.html' %}</div>
+</div>
+</body>
+</html>
