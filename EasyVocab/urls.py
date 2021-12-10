@@ -30,5 +30,6 @@ urlpatterns = [
     # Authentication
     path('login', auth_views.login),
     path('signup', auth_views.signup),
+    path('logout', auth_views.logout)
 
 ]
