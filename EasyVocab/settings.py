@@ -13,6 +13,15 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 
+# Dictionary Key
+DIC_KEY = '15272e71-c07c-4aec-a5d0-414375b77971'
+# Thesaurus Key
+THES_KEY = '3945e2de-1931-4d89-88f5-2d695d585bfd'
+# Headers
+HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.55 Safari/537.36 Edg/96.0.1054.43'
+}
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 

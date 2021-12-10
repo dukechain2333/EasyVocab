@@ -20,6 +20,7 @@ from django.conf import settings
 from django.conf.urls import url
 import Home.views as home_views
 import Authentication.views as auth_views
+import Dictionary.views as dic_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,6 +31,8 @@ urlpatterns = [
     # Authentication
     path('login', auth_views.login),
     path('signup', auth_views.signup),
-    path('logout', auth_views.logout)
+    path('logout', auth_views.logout),
+    # Dictionary
+    path('dictionary', dic_views.dictionary),
 
 ]

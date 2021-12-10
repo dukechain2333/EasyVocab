@@ -40,7 +40,7 @@
 /*    -webkit-backdrop-filter: blur(10px);*/
 /*}*/
 
-span {
+.welcome {
     position: relative;
     z-index: 10;
     display: flex;

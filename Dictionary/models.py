@@ -1,14 +1,14 @@
 from django.db import models
-from Authentication.models import UserInfo
+from django.utils import timezone
 
 
 # Create your models here.
 
 class History(models.Model):
-    userId = models.ForeignKey(UserInfo, on_delete=models.CASCADE)
+    userId = models.CharField(max_length=100)
     username = models.CharField(max_length=100)
     history = models.CharField(max_length=100)
-    query_time = models.DateTimeField()
+    query_time = models.DateTimeField(default=timezone.now, )
 
     def __str__(self):
         return self.userId
