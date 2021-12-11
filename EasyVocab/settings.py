@@ -14,9 +14,9 @@ from pathlib import Path
 import os
 
 # Dictionary Key
-DIC_KEY = '15272e71-c07c-4aec-a5d0-414375b77971'
+DIC_KEY = ''
 # Thesaurus Key
-THES_KEY = '3945e2de-1931-4d89-88f5-2d695d585bfd'
+THES_KEY = ''
 # Headers
 HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.55 Safari/537.36 Edg/96.0.1054.43'
@@ -29,12 +29,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-4%dfdk3t2&%@aph_v2!_1@g^#q7_rnmhg=+ku0@unslg_m@c_^'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -126,11 +126,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # Can only be used under None DEBUG mode
-# STATIC_ROOT = 'static'
+STATIC_ROOT = 'static'
 # Can only be used under DEBUG mode
-STATICFILES_DIRS = [
-    (os.path.join(BASE_DIR, 'static'))
-]
+# STATICFILES_DIRS = [
+#     (os.path.join(BASE_DIR, 'static'))
+# ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

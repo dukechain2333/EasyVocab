@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dictionary</title>
+    {% include 'General/Packages.html' %} {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/Home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/DictHome.css' %}">
+</head>
+<body>
+<div class="container-fluent">
+    <div class="row">{% include 'General/Navigator.html' %}</div>
+    <div class="homepage">
+        <div class="searchbox">
+            <div>
+                EasyVocab
+                <form class="d-flex" action="/dicsearch" method="post">
+                    {% csrf_token %}
+                    <input class="form-control me-2 pagesearch" name="search" type="search"
+                           placeholder="Put your words here"
+                           aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row">{% include 'General/Copyright.html' %}</div>
+</div>
+</body>
+</html>

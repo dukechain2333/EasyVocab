@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Words</title>
+    {% include 'General/Packages.html' %} {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/DictSearch.css' %}">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">{% include 'General/Navigator.html' %}</div>
+    <div class="row" style="padding-top: 5vh">
+        <div class="col-md-3 col-lg-3 "></div>
+        <div class="col-md-6 col-lg-6e">
+            {% if words %}
+                <div class="words row">
+                    <h1>{{ words.capitalize }}</h1>
+                    <HR>
+                </div>
+                <div class="normal row">
+                    <div>
+                        <a class="btn btn-primary mb-3" data-bs-toggle="collapse" href="#normalDic" role="button"
+                           aria-expanded="false">
+                            Normal Dictionary
+                        </a>
+                    </div>
+                    <div class="collapse" id="normalDic">
+                        <ul class="outer-ul">
+                            {% for data in normalDic %}
+                                <li>
+                                    <div class="explain-part mb-3">
+                                        {% if data.pron %}
+                                            <div class="pron-div">
+                                                <h3>Pronunciation:</h3>
+                                                <span class="pron">{{ data.pron }}</span>
+                                            </div>
+                                            <br>
+                                        {% endif %}
+                                        {% if data.fl %}
+                                            <div class="fl-div">
+                                                <h3>Part of speech:</h3>
+                                                <span class="fl">{{ data.fl }}</span>
+                                            </div>
+                                            <br>
+                                        {% endif %}
+                                        {% if data.def %}
+                                            <div class="def-div">
+                                                <h3>Definition:</h3>
+                                                <ul class="inner-ul">
+                                                    {% for i in data.def %}
+                                                        <li>
+                                                            <span>{{ i }}</span>
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                            <br>
+                                        {% endif %}
+                                        {% if data.offensive %}
+                                            <div class="offensive-div">
+                                                <h3>Offensive:</h3>
+                                                <span class="offensive">{{ data.offensive }}</span>
+                                            </div>
+                                            <br>
+                                        {% endif %}
+                                        {% if data.stems %}
+                                            <div class="stems-div">
+                                                <h3>Stems:</h3>
+                                                <ul class="inner-ul">
+                                                    {% for i in data.stems %}
+                                                        <li>
+                                                            <span>{{ i }}</span>
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                            <br>
+                                        {% endif %}
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <HR>
+                <div class="professional row">
+                    <div>
+                        <a class="btn btn-primary mb-3" data-bs-toggle="collapse" href="#proDic" role="button"
+                           aria-expanded="false">
+                            Professional Dictionary
+                        </a>
+                    </div>
+                    <div class="collapse" id="proDic">
+                        <ul class="outer-ul">
+                            {% for data in proDic %}
+                                <li>
+                                    <div class="explain-part mb-3">
+                                        {% if data.fl %}
+                                            <div class="fl-div">
+                                                <h3>Part of speech:</h3>
+                                                <span class="fl">{{ data.fl }}</span>
+                                            </div>
+                                            <br>
+                                        {% endif %}
+                                        {% if data.def %}
+                                            <div class="def-div">
+                                                <h3>Definition:</h3>
+                                                <ul class="inner-ul">
+                                                    {% for i in data.def %}
+                                                        <li>
+                                                            <span>{{ i }}</span>
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                            <br>
+                                        {% endif %}
+                                        {% if data.offensive %}
+                                            <div class="offensive-div">
+                                                <h3>Offensive:</h3>
+                                                <span class="offensive">{{ data.offensive }}</span>
+                                            </div>
+                                            <br>
+                                        {% endif %}
+                                        {% if data.syns %}
+                                            <div class="syns-div">
+                                                <h3>Synonyms:</h3>
+                                                <ul class="inner-ul">
+                                                    {% for outerlist in data.syns %}
+                                                        <li>
+                                                            {% for innerlist in outerlist %}
+                                                                {{ innerlist }},
+                                                            {% endfor %}
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                            <br>
+                                        {% endif %}
+                                        {% if data.stems %}
+                                            <div class="stems-div">
+                                                <h3>Stems:</h3>
+                                                <ul class="inner-ul">
+                                                    {% for i in data.stems %}
+                                                        <li>
+                                                            <span>{{ i }}</span>
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                            <br>
+                                        {% endif %}
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            {% else %}
+                <div>
+                    <span class="inform-part">
+                        Hello there!
+                        <br>
+                        Please try to search something in the search box above.
+                    </span>
+                </div>
+            {% endif %}
+        </div>
+        <div class="col-md-3 col-lg-3"></div>
+    </div>
+    <div class="row">{% include 'General/Copyright.html' %}</div>
+</div>
+</body>
+</html>

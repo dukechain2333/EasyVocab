@@ -1,0 +1,24 @@
+.explain-part {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    border-radius: 25px;
+    background-color: #efc7e6;
+    padding: 20px;
+}
+
+.inform-part {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    border-radius: 25px;
+    background-color: #efc7e6;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.outer-ul {
+    list-style: none;
+}

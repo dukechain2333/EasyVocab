@@ -33,6 +33,7 @@ urlpatterns = [
     path('signup', auth_views.signup),
     path('logout', auth_views.logout),
     # Dictionary
-    path('dictionary', dic_views.dictionary),
+    path('dicsearch', dic_views.dictionary_search),
+    path('dictionary', dic_views.dictionary_home)
 
 ]

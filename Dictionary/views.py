@@ -41,9 +41,9 @@ def get_dic(data):
             meaning = {
                 'pron': d['hwi']['prs'][0]['mw'],
                 'fl': d['fl'],
-                'offensive': d['meta']['offensive'],
+                'offensive': str(d['meta']['offensive']),
                 'stems': d['meta']['stems'],
-                'usage': d['def'][0]['sseq'][0][0][1]['dt'][0][1],
+                # 'usage': d['def'][0]['sseq'][0][0][1]['dt'][0][1],
                 'def': d['shortdef']
             }
             dic_sorted.append(meaning)
@@ -51,9 +51,9 @@ def get_dic(data):
             meaning = {
                 'pron': '',
                 'fl': '',
-                'offensive': d['meta']['offensive'],
+                'offensive': str(d['meta']['offensive']),
                 'stems': d['meta']['stems'],
-                'usage': '',
+                # 'usage': '',
                 'def': d['shortdef']
             }
             dic_sorted.append(meaning)
@@ -68,9 +68,9 @@ def get_thes(data):
             meaning = {
                 'stems': d['meta']['stems'],
                 'syns': d['meta']['syns'],
-                'offensive': d['meta']['offensive'],
+                'offensive': str(d['meta']['offensive']),
                 'fl': d['fl'],
-                'usage': d['def'][0]['sseq'][0][0][1]['dt'][1][1][0]['t'],
+                # 'usage': d['def'][0]['sseq'][0][0][1]['dt'][1][1][0]['t'],
                 'def': d['shortdef']
             }
             thes_sorted.append(meaning)
@@ -80,7 +80,7 @@ def get_thes(data):
     return thes_sorted
 
 
-def dictionary(request):
+def dictionary_search(request):
     if request.method == "POST":
         if request.session.get('is_login', None):
             search = request.POST.get('search')
@@ -90,12 +90,12 @@ def dictionary(request):
                     dic_data, thes_data = get_data(search)
                 except:
                     dic_data, thes_data, false_flag = get_data(search)
-                    return render(request, 'Dictionary/Dictionary.html',
+                    return render(request, 'Dictionary/DictionarySearch.html',
                                   {"normalDic": dic_data, "proDic": thes_data,
                                    "words": search})
                 dic_data = get_dic(dic_data)
                 thes_data = get_thes(thes_data)
-                return render(request, 'Dictionary/Dictionary.html',
+                return render(request, 'Dictionary/DictionarySearch.html',
                               {"normalDic": dic_data, "proDic": thes_data,
                                "words": search})
             else:
@@ -103,4 +103,8 @@ def dictionary(request):
         else:
             return redirect('/login')
 
-    return render(request, 'Dictionary/Dictionary.html')
+    return render(request, 'Dictionary/DictionarySearch.html')
+
+
+def dictionary_home(request):
+    return render(request, 'Dictionary/DictionaryHome.html')
