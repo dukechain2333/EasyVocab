@@ -1,6 +1,6 @@
 # EasyVocab
 
-A tool to help you gain vocabulary. (Web-based dictionary using Merriam-Webster api )
+A tool to help you gain vocabulary (Web-based dictionary using Merriam-Webster api).
 
 ![](https://img.shields.io/badge/dependencies-Python%203.8--3.9-blue)
 ![](https://img.shields.io/badge/dependencies-Django%203.2.9-green)
