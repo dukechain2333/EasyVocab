@@ -42,7 +42,7 @@ python manage.py runserver
   And you should notice that the host and port can be modified by running those commands
 
 ```bash
-python manage.py runserver --host <your_host> --port <your_port>
+python manage.py runserver <your_host>:<your_port>
 ```
 
 - You may get more details by visiting [Django Documents](https://www.djangoproject.com/)
